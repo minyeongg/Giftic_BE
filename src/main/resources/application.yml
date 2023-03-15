@@ -1,0 +1,25 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: create
+    database: mysql
+    show-sql: true
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/kakao?useSSL=false&characterEncoding=UTF-8&serverTimezone=UTC
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 583710914038-le39jvlu3tiq9ilvcu9v27nr1733cmj0.apps.googleusercontent.com
+            client-secret: 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
+
+jwt:
+  token:
+    secret: "secretKey"
