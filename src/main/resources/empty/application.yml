@@ -1,0 +1,42 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: create
+    database: mysql
+    show-sql: true
+
+  datasource:
+    hikari:
+      maximum-pool-size: 5
+    url: jdbc:mysql://localhost:3306/kakao?useSSL=false&characterEncoding=UTF-8&serverTimezone=UTC
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+
+  security:
+    oauth2.client:
+        registration:
+          google:
+            redirect-uri: http://localhost:8080/login/oauth_google_check
+            client-id: 583710914038-le39jvlu3tiq9ilvcu9v27nr1733cmj0.apps.googleusercontent.com
+            client-secret: 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
+            scope:
+              - email
+              - profile
+cors:
+  allowed-origins: 'http://localhost:8080'
+  allowed-methods: GET, POST, DELETE, OPTIONS
+  allowed-headers: '*'
+
+jwt.secret: '8sknjlO3NPTBqo319DHLNqsQAfRJEdKsETOds'
+
+# 토큰 관련 secret Key 및 RedirectUri 설정
+app:
+  auth:
+    tokenSecret: 926D96C90030DD58429D2751AC1BDBBC
+    tokenExpiry: 1800000
+    refreshTokenExpiry: 604800000
+  oauth2:
+    authorizedRedirectUris:
+      - http://localhost:3000/oauth/redirect
