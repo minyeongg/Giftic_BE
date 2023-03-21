@@ -6,7 +6,7 @@ import lombok.Getter;
 @AllArgsConstructor
 @Getter
 public class UserJoinRequest {
-    private String email;
-    private String name;
-    private String nickname;
+    private String userName;
+    private String password;
+
 }
