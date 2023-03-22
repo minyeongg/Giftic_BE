@@ -1,0 +1,26 @@
+server:
+  servlet:
+    encoding:
+      force-response: true
+
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  output:
+    ansi:
+      enabled: always
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/kakao?useSSL=false&characterEncoding=UTF-8&serverTimezone=UTC
+#    url: jdbc:mysql://myrds.cn6oq0g93zz1.ap-northeast-2.rds.amazonaws.com:3306/kakao?useSSL=false
+    username: root
+    password: root
+
+jwt:
+  token:
+    secret: "secretKey"
